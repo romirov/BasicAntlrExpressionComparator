@@ -1,17 +1,14 @@
-package antlr.gen_files
-
-import antlr.gen_files.ComparatorGrammarParser.*
+import ComparatorGrammarParser.*
 import org.antlr.v4.runtime.ParserRuleContext
 import org.antlr.v4.runtime.tree.ErrorNode
 import org.antlr.v4.runtime.tree.TerminalNode
 
-// Generated from java-escape by ANTLR 4.11.1
 /**
  * This class provides an empty implementation of [ComparatorGrammarListener],
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-class ComparatorGrammarBaseListener : ComparatorGrammarListener {
+open class ComparatorGrammarBaseListener : ComparatorGrammarListener {
   /**
    * {@inheritDoc}
    *
@@ -34,7 +31,7 @@ class ComparatorGrammarBaseListener : ComparatorGrammarListener {
    *
    * The default implementation does nothing.
    */
-  override fun enterCompare(ctx: CompareContext?) {}
+  override fun enterCompareExpression(ctx: CompareExpressionContext?) {}
 
   /**
    * {@inheritDoc}
@@ -42,7 +39,23 @@ class ComparatorGrammarBaseListener : ComparatorGrammarListener {
    *
    * The default implementation does nothing.
    */
-  override fun exitCompare(ctx: CompareContext?) {}
+  override fun exitCompareExpression(ctx: CompareExpressionContext?) {}
+
+  /**
+   * {@inheritDoc}
+   *
+   *
+   * The default implementation does nothing.
+   */
+  override fun enterCompareDate(ctx: CompareDateContext?) {}
+
+  /**
+   * {@inheritDoc}
+   *
+   *
+   * The default implementation does nothing.
+   */
+  override fun exitCompareDate(ctx: CompareDateContext?) {}
 
   /**
    * {@inheritDoc}
@@ -66,22 +79,6 @@ class ComparatorGrammarBaseListener : ComparatorGrammarListener {
    *
    * The default implementation does nothing.
    */
-  override fun enterComparison(ctx: ComparisonContext?) {}
-
-  /**
-   * {@inheritDoc}
-   *
-   *
-   * The default implementation does nothing.
-   */
-  override fun exitComparison(ctx: ComparisonContext?) {}
-
-  /**
-   * {@inheritDoc}
-   *
-   *
-   * The default implementation does nothing.
-   */
   override fun enterDate(ctx: ComparatorGrammarParser.DateContext?) {}
 
   /**
@@ -91,6 +88,22 @@ class ComparatorGrammarBaseListener : ComparatorGrammarListener {
    * The default implementation does nothing.
    */
   override fun exitDate(ctx: ComparatorGrammarParser.DateContext?) {}
+
+  /**
+   * {@inheritDoc}
+   *
+   *
+   * The default implementation does nothing.
+   */
+  override fun enterComparison(ctx: ComparisonContext?) {}
+
+  /**
+   * {@inheritDoc}
+   *
+   *
+   * The default implementation does nothing.
+   */
+  override fun exitComparison(ctx: ComparisonContext?) {}
 
   /**
    * {@inheritDoc}

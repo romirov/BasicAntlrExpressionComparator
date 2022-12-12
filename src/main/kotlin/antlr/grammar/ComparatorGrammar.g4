@@ -6,12 +6,21 @@ comparator
    ;
 
 compare
-   : paren_expression comparison (paren_expression | paren_date)
+   : left_expression=paren_expression operation=comparison right_expression=paren_expression #CompareExpression
+   | left_expression=paren_date operation=comparison right_expression=paren_date             #CompareDate
    ;
 
 paren_date
     : LPAREN date RPAREN
     ;
+
+date
+   : DATE
+   ;
+
+DATE
+   : ('0' .. '3')('0' .. '9')  '.' ('0' .. '1')('0' .. '9') '.' ('0' .. '9')+
+   ;
 
 comparison
    : EQ
@@ -23,7 +32,7 @@ comparison
    ;
 
 EQ
-   : '='
+   : '=='
    ;
 
 NE
@@ -44,12 +53,4 @@ LT
 
 LE
    : '<='
-   ;
-
-date
-   : DATE
-   ;
-
-DATE
-   : ('0' .. '3')('0' .. '9')  '.' ('0' .. '1')('0' .. '9') '.' ('0' .. '9')+
    ;

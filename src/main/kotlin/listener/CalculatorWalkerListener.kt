@@ -1,12 +1,11 @@
 package listener
 
-
 import antlr.gen_files.CalculatorGrammarBaseListener
 import antlr.gen_files.CalculatorGrammarParser
 import mu.KotlinLogging
 import org.antlr.v4.runtime.RuleContext
 
-class CalculatorWalkerListener: CalculatorGrammarBaseListener() {
+class CalculatorWalkerListener : CalculatorGrammarBaseListener() {
   private lateinit var expr: String
   private val values = mutableListOf<Double>()
   private val resultValuesMap = mutableMapOf<String, Double>()
@@ -14,17 +13,17 @@ class CalculatorWalkerListener: CalculatorGrammarBaseListener() {
 
   fun getRezult(): String {
     val reverseKeyList = resultValuesMap.keys.reversed()
-    reverseKeyList.forEach{expression ->
+    reverseKeyList.forEach { expression ->
       expr = expr.replace(expression, resultValuesMap.get(expression).toString())
     }
     values.clear()
     resultValuesMap.clear()
-    val logger = KotlinLogging.logger{}
+    val logger = KotlinLogging.logger {}
     logger.info("result: ${expr}")
     return expr
   }
 
-  override fun enterCalculation(ctx: CalculatorGrammarParser.CalculationContext?){
+  override fun enterCalculation(ctx: CalculatorGrammarParser.CalculationContext?) {
     ctx?.text?.let { expr = it }
   }
 
@@ -50,6 +49,7 @@ class CalculatorWalkerListener: CalculatorGrammarBaseListener() {
       isCalculationsMade = false
     }
   }
+
   override fun exitMultiplicationOrDivisionParen(ctx: CalculatorGrammarParser.MultiplicationOrDivisionParenContext?) {
     ctx?.operation?.let { calculate(it.type) }
     addValuesToResultMapByCondition(ctx)

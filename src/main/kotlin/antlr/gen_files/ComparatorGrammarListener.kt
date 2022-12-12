@@ -1,9 +1,6 @@
-package antlr.gen_files
-
-import antlr.gen_files.ComparatorGrammarParser.*
+import ComparatorGrammarParser.*
 import org.antlr.v4.runtime.tree.ParseTreeListener
 
-// Generated from java-escape by ANTLR 4.11.1
 /**
  * This interface defines a complete listener for a parse tree produced by
  * [ComparatorGrammarParser].
@@ -22,16 +19,32 @@ interface ComparatorGrammarListener : ParseTreeListener {
   fun exitComparator(ctx: ComparatorContext?)
 
   /**
-   * Enter a parse tree produced by [ComparatorGrammarParser.compare].
+   * Enter a parse tree produced by the `CompareExpression`
+   * labeled alternative in [ComparatorGrammarParser.compare].
    * @param ctx the parse tree
    */
-  fun enterCompare(ctx: CompareContext?)
+  fun enterCompareExpression(ctx: CompareExpressionContext?)
 
   /**
-   * Exit a parse tree produced by [ComparatorGrammarParser.compare].
+   * Exit a parse tree produced by the `CompareExpression`
+   * labeled alternative in [ComparatorGrammarParser.compare].
    * @param ctx the parse tree
    */
-  fun exitCompare(ctx: CompareContext?)
+  fun exitCompareExpression(ctx: CompareExpressionContext?)
+
+  /**
+   * Enter a parse tree produced by the `CompareDate`
+   * labeled alternative in [ComparatorGrammarParser.compare].
+   * @param ctx the parse tree
+   */
+  fun enterCompareDate(ctx: CompareDateContext?)
+
+  /**
+   * Exit a parse tree produced by the `CompareDate`
+   * labeled alternative in [ComparatorGrammarParser.compare].
+   * @param ctx the parse tree
+   */
+  fun exitCompareDate(ctx: CompareDateContext?)
 
   /**
    * Enter a parse tree produced by [ComparatorGrammarParser.paren_date].
@@ -46,18 +59,6 @@ interface ComparatorGrammarListener : ParseTreeListener {
   fun exitParen_date(ctx: Paren_dateContext?)
 
   /**
-   * Enter a parse tree produced by [ComparatorGrammarParser.comparison].
-   * @param ctx the parse tree
-   */
-  fun enterComparison(ctx: ComparisonContext?)
-
-  /**
-   * Exit a parse tree produced by [ComparatorGrammarParser.comparison].
-   * @param ctx the parse tree
-   */
-  fun exitComparison(ctx: ComparisonContext?)
-
-  /**
    * Enter a parse tree produced by [ComparatorGrammarParser.date].
    * @param ctx the parse tree
    */
@@ -68,6 +69,18 @@ interface ComparatorGrammarListener : ParseTreeListener {
    * @param ctx the parse tree
    */
   fun exitDate(ctx: ComparatorGrammarParser.DateContext?)
+
+  /**
+   * Enter a parse tree produced by [ComparatorGrammarParser.comparison].
+   * @param ctx the parse tree
+   */
+  fun enterComparison(ctx: ComparisonContext?)
+
+  /**
+   * Exit a parse tree produced by [ComparatorGrammarParser.comparison].
+   * @param ctx the parse tree
+   */
+  fun exitComparison(ctx: ComparisonContext?)
 
   /**
    * Enter a parse tree produced by [ComparatorGrammarParser.calculation].
