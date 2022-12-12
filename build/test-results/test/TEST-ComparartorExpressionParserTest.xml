@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ComparartorExpressionParserTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-12T20:38:30" hostname="fuji" time="0.222">
+  <properties/>
+  <testcase name="comparartorExpressionParserWithoutErrorTest()" classname="ComparartorExpressionParserTest" time="0.207"/>
+  <testcase name="comparartorExpressionParserWithErrorTest()" classname="ComparartorExpressionParserTest" time="0.014"/>
+  <system-out><![CDATA[23:38:31.153 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (number 25)) )) (comparison ==) (paren_expression ( (expression (number 25)) ))) <EOF>)
+23:38:31.169 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) )) (comparison ==) (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) ))) <EOF>)
+23:38:31.171 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) )) (comparison ==) (paren_expression ( (expression (expression (expression (number 1)) + (expression (number 1))) + (expression (number 1))) ))) <EOF>)
+23:38:31.174 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) ))) * (expression (number 10))) )) (comparison >=) (paren_expression ( (expression (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) ))) + (expression (number 1))) ))) <EOF>)
+23:38:31.176 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (expression (paren_expression ( (expression (expression (number 2)) / (expression (number 5))) ))) * (expression (number 10))) )) (comparison <=) (paren_expression ( (expression (expression (paren_expression ( (expression (expression (number 2)) + (expression (number 1))) ))) * (expression (number 30))) ))) <EOF>)
+23:38:31.178 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_expression ( (expression (expression (paren_expression ( (expression (expression (number 2)) / (expression (number 5))) ))) * (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) )))) )) (comparison !=) (paren_expression ( (expression (expression (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) ))) * (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) )))) * (expression (paren_expression ( (expression (expression (number 1)) + (expression (number 1))) )))) ))) <EOF>)
+23:38:31.180 [Test worker] INFO  parser.ComparatorExpressionParser: parse tree: (comparator (compare (paren_date ( (date 01.07.2005) )) (comparison !=) (paren_date ( (date 02.05.2005) ))) <EOF>)
+23:38:31.190 [Test worker] ERROR logger.Logger: Syntax error position in line 1:8 missing '(' at '25'
+23:38:31.191 [Test worker] ERROR logger.Logger: Syntax error position in line 1:0 message mismatched input '1' expecting '('
+23:38:31.192 [Test worker] ERROR logger.Logger: Syntax error position in line 1:4 extraneous input '1' expecting ')'
+23:38:31.193 [Test worker] ERROR logger.Logger: Syntax error position in line 1:17 message token recognition error at: '= '
+23:38:31.195 [Test worker] ERROR logger.Logger: Syntax error position in line 1:15 missing ')' at '<='
+23:38:31.198 [Test worker] ERROR logger.Logger: Syntax error position in line 1:41 message mismatched input '*' expecting {')', '*', '/', '+', '-'}
+23:38:31.199 [Test worker] ERROR logger.Logger: Syntax error position in line 1:19 message mismatched input '02.05.2005' expecting {NUMBER, '(', '+', '-'}
+23:38:31.200 [Test worker] ERROR logger.Logger: Syntax error position in line 1:17 message mismatched input '1' expecting DATE
+]]></system-out>
+  <system-err><![CDATA[line 1:8 missing '(' at '25'
+line 1:0 mismatched input '1' expecting '('
+line 1:4 extraneous input '1' expecting ')'
+line 1:17 token recognition error at: '= '
+line 1:15 missing ')' at '<='
+line 1:41 mismatched input '*' expecting {')', '*', '/', '+', '-'}
+line 1:19 mismatched input '02.05.2005' expecting {NUMBER, '(', '+', '-'}
+line 1:17 mismatched input '1' expecting DATE
+]]></system-err>
+</testsuite>
