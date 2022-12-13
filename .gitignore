@@ -1,0 +1,16 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+!.idea/runConfigurations
+!.idea/runConfigurations/*
+
+# Maven
+log/
+target/
+
+#Gradle
+.gradle
+
+#Other
+build
