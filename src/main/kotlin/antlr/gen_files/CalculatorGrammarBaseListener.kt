@@ -1,10 +1,7 @@
-package antlr.gen_files
-
 import org.antlr.v4.runtime.ParserRuleContext
 import org.antlr.v4.runtime.tree.ErrorNode
 import org.antlr.v4.runtime.tree.TerminalNode
 
-// Generated from java-escape by ANTLR 4.11.1
 /**
  * This class provides an empty implementation of [CalculatorGrammarListener],
  * which can be extended to create a listener which only needs to handle a subset

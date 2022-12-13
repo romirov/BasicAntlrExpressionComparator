@@ -1,8 +1,5 @@
-package antlr.gen_files
-
 import org.antlr.v4.runtime.tree.ParseTreeListener
 
-// Generated from java-escape by ANTLR 4.11.1
 /**
  * This interface defines a complete listener for a parse tree produced by
  * [CalculatorGrammarParser].

@@ -1,7 +1,6 @@
 package listener
 
-import antlr.gen_files.CalculatorGrammarBaseListener
-import antlr.gen_files.CalculatorGrammarParser
+import CalculatorGrammarBaseListener
 import mu.KotlinLogging
 import org.antlr.v4.runtime.RuleContext
 

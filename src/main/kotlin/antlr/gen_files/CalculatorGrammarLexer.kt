@@ -1,5 +1,3 @@
-package antlr.gen_files
-
 import org.antlr.v4.runtime.*
 import org.antlr.v4.runtime.atn.ATN
 import org.antlr.v4.runtime.atn.ATNDeserializer
@@ -7,7 +5,6 @@ import org.antlr.v4.runtime.atn.LexerATNSimulator
 import org.antlr.v4.runtime.atn.PredictionContextCache
 import org.antlr.v4.runtime.dfa.DFA
 
-// Generated from java-escape by ANTLR 4.11.1
 class CalculatorGrammarLexer(input: CharStream?) : Lexer(input) {
   @Deprecated("")
   override fun getTokenNames(): Array<String?> {
