@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test
 import service.ComparatorService
-import kotlin.test.assertFails
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
